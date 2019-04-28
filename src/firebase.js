@@ -7,4 +7,5 @@ var config = {
     storageBucket: "laptop-search-engine-77d09.appspot.com",
     messagingSenderId: "934329623534"
   };
-  firebase.initializeApp(config);
+
+firebase.initializeApp(config);
