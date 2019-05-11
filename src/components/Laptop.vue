@@ -1,18 +1,30 @@
 <template>
-    <tr>
-        <td class='laptop-select-col'>
-        <input type="checkbox">
-        </td>
-        <td class='laptop-col'>
-        <img src="../assets/img-placeholder.jpg" alt="image-placeholder">
-        <span>{{ laptop.model }}</span>
-        </td>
-        <td class='laptop-rating-col'>{{ '*'.repeat(laptop.rating) }} ({{ laptop.numOfReviews }})</td>
-        <td class='laptop-price-col'>{{ this.convertToUsdFormat(laptop.price) }}</td>
-        <td class='laptop-add-col'>
-        <button>Add</button>
-        </td>
-    </tr>
+    <div class='card shadow-lg laptop-container'>
+        <div class='card-body laptop-info'>
+            <div class='card-title text-center laptop-title'>
+                <h5>{{ laptop.model }}</h5>
+            </div>
+            <p class="card-text">Price: {{ this.convertToUsdFormat(laptop.price) }}</p>
+            <p class="card-text">
+                <span>Rating:&nbsp;</span>
+                <span v-for='star in laptop.rating' :key='"star: "+ star'>
+                    <i class="fas fa-star"></i>
+                </span>
+                <span v-for='emptyStar in (5 - laptop.rating)' :key='"e-star: " + emptyStar'>
+                    <i class="far fa-star"></i>
+                </span>
+            </p>
+        </div>
+        <div class='laptop-image'>
+            <img :src='laptop.imageUrl' 
+                :alt='laptop.model' 
+                width='150' 
+                class='d-flex align-self-center'>
+        </div>
+        <div class="card-body text-center">
+            <button class="btn btn-outline-dark btn-lg">View Laptop Details</button>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -35,14 +47,22 @@ export default {
 </script>
 
 <style>
-.laptop-col img {
-  width: 3em;
+.laptop-container {
+    height: 100%;
 }
 
-.laptop-col {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 1em 0;
+.laptop-info {
+    height: 40%;
+}
+
+.laptop-title {
+    height: 25%;
+}
+
+.laptop-image {
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>

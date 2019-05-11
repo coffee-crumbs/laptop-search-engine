@@ -1,8 +1,26 @@
 [
     {
+        "id": 1,
         "model": "Lenovo ThinkPad X220 429148U",
         "rating": 5,
         "numOfReviews": 1,
-        "price": 2000.00
+        "price": 2000.00,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61Blb4W7AYL._SL1060_.jpg"
+    },
+    {
+        "id": 2,
+        "model": "Razer Blade Stealth",
+        "rating": 0,
+        "numOfReviews": 0,
+        "price": 1414.98,
+        "imageUrl": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6172/6172318_sd.jpg"
+    },
+    {
+        "id": 3,
+        "model": "Alienware 17 AW17R3-3758SLV",
+        "rating": 3,
+        "numOfReviews": 0,
+        "price": 2009.54,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/71Q7uz8ksBL._SL1500_.jpg"
     }
 ]
